@@ -170,7 +170,11 @@
             let level = $(`#level`).val();
             console.log(grade,item,level);
             let response = await fetch(`https://narwhal-wired-platypus.ngrok-free.app/api/OpenAI/GetPaper?grade=${grade}&item=${item}&level=${level}`,{
-                method : "Get"
+                method : "Get",
+                headers :   new Headers({
+                  "ngrok-skip-browser-warning": "69420",
+                  //"authorization":""
+                })
             });
             let data = await response.text();
             $('#Paper').html(data);
