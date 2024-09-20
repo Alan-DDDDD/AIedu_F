@@ -168,6 +168,7 @@
             let grade = $(`#grade`).val();
             let item = $(`#item`).val();
             let level = $(`#level`).val();
+            $(this).attr('disable',true);
             console.log(grade,item,level);
             let response = await fetch(`https://narwhal-wired-platypus.ngrok-free.app/api/OpenAI/GetPaper?grade=${grade}&item=${item}&level=${level}`,{
                 method : "Get",
@@ -178,6 +179,7 @@
             });
             let data = await response.text();
             $('#Paper').html(data);
+            $(this).removeAttr('disable');
         });
     </script>
 </body>
