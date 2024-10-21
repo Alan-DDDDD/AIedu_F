@@ -151,6 +151,7 @@
         var waitpaper;
         var paper;
         var answerpaper = [];
+        var donepaper = [];
         $(`#loading`).attr('hidden',true);
         $(`#send`).on(`click`,async function(){
             $(`#loading`).removeAttr("hidden");
@@ -267,6 +268,7 @@
             }
         });
         $(`#getPaper`).on(`click`,async function(){
+            answerpaper = []
             let grade = $(`#grade`).val();
             let item = $(`#item`).val();
             let type = $(`#type`).val();
@@ -316,6 +318,7 @@
                 try{
                     let quetionitem = $(`#quetionitem`).val();
                     console.log(answerpaper[answerpaper.length-1].answer,selected.val())
+                    answerpaper[answerpaper.length-1].sans = selected.val();
                     //alert(answerpaper[answerpaper.length-1].answer == selected.val());
                     //alert(selected.value === correctAnswer ? "A":"E")
                     $(`#Paper #A`).removeAttr("hidden");
