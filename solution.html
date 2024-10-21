@@ -332,6 +332,9 @@
 
         function postPaper(){
             collectionA();
+            let total = answerpaper.length;
+            let confirm = answerpaper.filter(x=>x.answer == x.sans).length;
+            alert(`總得分${(100/total)*confirm}分`);
         }
     </script>
 </body>
