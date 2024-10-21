@@ -88,8 +88,8 @@
                 <span class="visually-hidden">Loading...</span>
             </div>
         </div>
-        <div class="card p-3 mt-2" id="answer">
-        </div>
+        <!-- <div class="card p-3 mt-2" id="answer">
+        </div> -->
     </div>
     <div class="m-3" id="Test" hidden>
         <div class="card">
@@ -182,7 +182,7 @@
                 ca.scrollTop = ca.scrollHeight;
                 $(`#loading`).attr('hidden',true);
             });
-            $(`#answer`).html(amsg[amsg.length-1].content);
+            //$(`#answer`).html(amsg[amsg.length-1].content);
             
         });
         async function chat(form){
