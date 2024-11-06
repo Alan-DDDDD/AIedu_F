@@ -84,6 +84,7 @@
         </div>
         <div class="mt-2">
             <button class="btn btn-primary p-1" id="send">解答</button>
+            <button class="btn btn-primary p-1" id="again">重新提問</button>
             <div class="spinner-border text-primary" role="status" style="height: 1.25rem;width: 1.25rem;" id="loading">
                 <span class="visually-hidden">Loading...</span>
             </div>
@@ -172,6 +173,7 @@
             form.append('type','answer');
             form.append('messages',JSON.stringify(amsg))
             form.append('file',fileInput.files[0]);
+            $(`#question`).val("");
             chat(form).then(x=>{
                 chatAreas.append(`<div class="row m-1">
                 <div class="card col-4 align-self-start">
@@ -185,6 +187,11 @@
             });
             //$(`#answer`).html(amsg[amsg.length-1].content);
             
+        });
+        $(`#again`).on(`click`,function(){
+            $(`#question`).val("");
+            amsg = null;
+            $(`#chatAreas`).html("");
         });
         async function chat(form){
             let response = await fetch(`https://localhost:7009/api/OpenAI/ChatGPT`,{
