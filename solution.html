@@ -194,7 +194,7 @@
             $(`#chatAreas`).html("");
         });
         async function chat(form){
-            let response = await fetch(`https://5de6-36-224-50-62.ngrok-free.app/api/OpenAI/ChatGPT`,{
+            let response = await fetch(`https://ab51-2001-b011-3817-5b36-548a-4f3d-914b-cd31.ngrok-free.app/api/OpenAI/ChatGPT`,{
                 method : "Post",
                 body : form,
                 headers :   new Headers({
@@ -294,7 +294,7 @@
         });
 
         async function getPaper(grade,item,type,level,count,quetionitem,paperid){
-            let response = await fetch(`https://5de6-36-224-50-62.ngrok-free.app/api/OpenAI/GetPaper?grade=${grade}&item=${item}&type=${type}&level=${level}&count=${count}&quetionitem=${quetionitem}&paperid=${paperid}`,{
+            let response = await fetch(`https://ab51-2001-b011-3817-5b36-548a-4f3d-914b-cd31.ngrok-free.app/api/OpenAI/GetPaper?grade=${grade}&item=${item}&type=${type}&level=${level}&count=${count}&quetionitem=${quetionitem}&paperid=${paperid}`,{
                 method : "Get",
                 headers :   new Headers({
                   "ngrok-skip-browser-warning": "69420",
