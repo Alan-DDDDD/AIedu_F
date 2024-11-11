@@ -196,7 +196,11 @@
         async function chat(form){
             let response = await fetch(`https://5de6-36-224-50-62.ngrok-free.app/api/OpenAI/ChatGPT`,{
                 method : "Post",
-                body : form
+                body : form,
+                headers :   new Headers({
+                  "ngrok-skip-browser-warning": "69420",
+                  //"authorization":""
+                })
             });
             amsg = await response.json();
         }
@@ -292,10 +296,10 @@
         async function getPaper(grade,item,type,level,count,quetionitem,paperid){
             let response = await fetch(`https://5de6-36-224-50-62.ngrok-free.app/api/OpenAI/GetPaper?grade=${grade}&item=${item}&type=${type}&level=${level}&count=${count}&quetionitem=${quetionitem}&paperid=${paperid}`,{
                 method : "Get",
-                // headers :   new Headers({
-                //   "ngrok-skip-browser-warning": "69420",
-                //   //"authorization":""
-                // })
+                headers :   new Headers({
+                  "ngrok-skip-browser-warning": "69420",
+                  //"authorization":""
+                })
             });
             let data = await response.json();
             return data;
